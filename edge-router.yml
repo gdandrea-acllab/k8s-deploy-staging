@@ -1,0 +1,65 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: edge-router
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: edge-router
+        version: v1
+    spec:
+      containers:
+      - name: edge-router
+        image: dynatracesockshop/edge-router:0.5.0
+        env: 
+        - name: DT_TAGS
+          value: "product=sockshop"
+        - name: DT_CUSTOM_PROP
+          value: "SERVICE_TYPE=EDGE-ROUTER"
+        resources:
+          limits:
+            cpu: 300m
+            memory: 1024Mi
+          requests:
+            cpu: 100m
+            memory: 320Mi
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1   
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-router
+  labels:
+    app: edge-router
+  namespace: dev
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  selector:
+    app: edge-router
+  type: LoadBalancer
