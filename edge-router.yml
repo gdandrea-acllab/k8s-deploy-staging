@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: edge-router
-        image: dynatracesockshop/edge-router:0.5.0
+        image: edge-router
         env: 
         - name: DT_TAGS
           value: "product=sockshop"
