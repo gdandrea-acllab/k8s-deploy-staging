@@ -101,7 +101,7 @@ pipeline {
         sleep 60
       }
     }
-/*
+
     stage('Run production ready e2e check in staging') {
       steps {
         recordDynatraceSession (
@@ -139,6 +139,6 @@ pipeline {
           specFile: "monspec/e2e_perfsig.json"
         )
       }
-    }*/
+    }
   }
 }
