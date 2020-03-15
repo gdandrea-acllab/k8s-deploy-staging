@@ -22,10 +22,10 @@ spec:
           value: "SERVICE_TYPE=EDGE-ROUTER"
         resources:
           limits:
-            cpu: 150m
+            cpu: 200m
             memory: 1024Mi
           requests:
-            cpu: 50m
+            cpu: 1000m
             memory: 320Mi
         ports:
         - containerPort: 8080
