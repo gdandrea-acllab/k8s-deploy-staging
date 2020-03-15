@@ -131,7 +131,6 @@ pipeline {
             }
           }
         }
-        */
         //sleeping to allow data to arrive in Dynatrace
         sleep 60
         perfSigDynatraceReports(
@@ -141,5 +140,6 @@ pipeline {
         )
       }
     }
+    */
   }
 }
