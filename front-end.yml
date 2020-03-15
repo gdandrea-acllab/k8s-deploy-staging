@@ -22,10 +22,10 @@ spec:
           value: "SERVICE_TYPE=FRONTEND"
         resources:
           limits:
-            cpu: 150m
+            cpu: 300m
             memory: 1024Mi
           requests:
-            cpu: 50m
+            cpu: 100m
             memory: 320Mi
         ports:
         - containerPort: 8080
