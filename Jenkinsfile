@@ -101,7 +101,7 @@ pipeline {
         sleep 60
       }
     }
-
+/*
     stage('Run production ready e2e check in staging') {
       steps {
         recordDynatraceSession (
@@ -131,6 +131,7 @@ pipeline {
             }
           }
         }
+        */
         //sleeping to allow data to arrive in Dynatrace
         sleep 60
         perfSigDynatraceReports(
