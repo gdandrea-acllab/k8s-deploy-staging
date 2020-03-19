@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: 10.97.220.166:5000/library/sockshop/user-0.10.0
+        image: 10.109.48.206:5000/library/sockshop/user-0.13.0
         env: 
         - name: DT_TAGS
           value: "product=sockshop"
