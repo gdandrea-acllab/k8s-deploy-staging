@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: edge-router
-        image: 10.109.48.206:5000/library/sockshop/edge-router-0.11.0
+        image: 10.109.189.234:5000/library/sockshop/edge-router-0.12.0
         env: 
         - name: DT_TAGS
           value: "product=sockshop"
