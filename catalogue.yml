@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: 10.109.189.234:5000/library/sockshop/catalogue-0.15.0
+        image: 10.102.107.77:5000/library/sockshop/catalogue-0.16.0
         env: 
         - name: DT_TAGS
           value: "product=sockshop"
