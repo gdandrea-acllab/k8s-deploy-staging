@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-end
-        image: 10.109.48.206:5000/library/sockshop/front-end-0.21.0
+        image: 10.102.107.77:5000/library/sockshop/front-end-0.22.0
         env: 
         - name: DT_TAGS
           value: "product=sockshop"
